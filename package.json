@@ -1,6 +1,6 @@
 {
   "name": "@gusok/react-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "react"
   ],
@@ -17,8 +17,8 @@
       "require": "./dist/cjs/index.cjs"
     },
     "./*": {
-      "import": "./dist/*.js",
-      "require": "./dist/cjs/*.cjs"
+      "import": "./dist/",
+      "require": "./dist/cjs/"
     }
   },
   "main": "./dist/cjs/index.cjs",

@@ -1,9 +1,4 @@
-import {
-  cloneElement,
-  DetailedReactHTMLElement,
-  HTMLAttributes,
-  ReactNode,
-} from 'react';
+import { cloneElement, HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 /**
  * classNameとstyleはマージ、それ以外のプロパティはpropsの値で上書きしてcloneElementを実行する
@@ -16,10 +11,10 @@ export default function extendElement<
   P extends HTMLAttributes<T>,
   T extends HTMLElement,
 >(
-  element: DetailedReactHTMLElement<P, T>,
+  element: ReactElement<P>,
   overrideProps?: P,
   ...children: ReactNode[]
-): DetailedReactHTMLElement<P, T> {
+): ReactElement<P> {
   const { className: elClassName, style: elStyle, ...elRest } = element.props;
   const {
     className: orClassName,

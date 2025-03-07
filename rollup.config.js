@@ -27,32 +27,32 @@ const options = [
   _createOptions(INPUT, OUTPUT_ESM, 'es', EXTENTION_ESM, {
     declaration: true,
     plugins: [
-      // packagejson({
-      //   content: {
-      //     main: `${OUTPUT_CJS_DIR}/index${EXTENTION_CJS}`,
-      //     module: `index${EXTENTION_ESM}`,
-      //     types: 'index.d.ts',
-      //     exports: {
-      //       '.': {
-      //         import: `./index${EXTENTION_ESM}`,
-      //         require: `./${OUTPUT_CJS_DIR}/index${EXTENTION_CJS}`,
-      //       },
-      //       './*': {
-      //         import: './*.js',
-      //         require: './cjs/*.cjs',
-      //       },
-      //     },
-      //     files: ['**/*'],
-      //   },
-      // }),
-      // copy({
-      //   targets: [
-      //     {
-      //       src: ['LICENSE', 'README.md', 'README.ja.md'],
-      //       dest: 'dist',
-      //     },
-      //   ],
-      // }),
+      packagejson({
+        content: {
+          main: `${OUTPUT_CJS_DIR}/index${EXTENTION_CJS}`,
+          module: `index${EXTENTION_ESM}`,
+          types: 'index.d.ts',
+          exports: {
+            '.': {
+              import: `./index${EXTENTION_ESM}`,
+              require: `./${OUTPUT_CJS_DIR}/index${EXTENTION_CJS}`,
+            },
+            './*': {
+              import: './*.js',
+              require: './cjs/*.cjs',
+            },
+          },
+          files: ['**/*'],
+        },
+      }),
+      copy({
+        targets: [
+          {
+            src: ['LICENSE', 'README.md', 'README.ja.md'],
+            dest: 'dist',
+          },
+        ],
+      }),
     ],
   }),
   // cjs
