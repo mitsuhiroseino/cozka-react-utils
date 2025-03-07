@@ -1,13 +1,13 @@
-# @gusok/react-utils
+# @cozka/react-utils
 
-`@gusok/react-utils` is a package that provides utilities available for use in React.
+`@cozka/react-utils` is a package that provides utilities available for use in React.
 
 **[日本語のREADMEはこちら](./README.ja.md)**
 
 ## Installation
 
 ```sh
-npm install @gusok/react-utils
+npm install @cozka/react-utils
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ This function merges the properties passed via `props` with the `element`'s `pro
 - Others: Only updates `element.props` with `props` values that are not `undefined`.
 
 ```typescript
-import extendElement from '@gusok/react-utils/extendElement';
+import extendElement from '@cozka/react-utils/extendElement';
 
 console.log(element.props);
 // OUTPUT: { className: 'el', style: { backgroundColor: 'black' }, checked: true }
@@ -43,7 +43,7 @@ console.log(extendedElement.props);
 This function processes only `ReactElement`, `string`, and `number` types from `children` using the provided `callback`. If `React.Fragment` is included, it processes the children of `React.Fragment` based on the above criteria.
 
 ```typescript
-import forEachContent from '@gusok/react-utils/forEachContent';
+import forEachContent from '@cozka/react-utils/forEachContent';
 
 forEachContent(children, (child) => {
   // Logs only children of type ReactElement, string, or number
@@ -56,7 +56,7 @@ forEachContent(children, (child) => {
 This function processes only `ReactElement` types from `children` using the provided `callback`. If `React.Fragment` is included, it processes the children of `React.Fragment` based on the above criteria.
 
 ```typescript
-import forEachElement from '@gusok/react-utils/forEachElement';
+import forEachElement from '@cozka/react-utils/forEachElement';
 
 forEachElement(children, (child) => {
   // Logs only children of type ReactElement
@@ -69,7 +69,7 @@ forEachElement(children, (child) => {
 This function sets a value to a function or object ref. If the ref is `null`, no action is taken.
 
 ```typescript
-import setRef from '@gusok/react-utils/setRef';
+import setRef from '@cozka/react-utils/setRef';
 
 // For function refs, the value is passed as an argument to the function
 setRef((v) => {
@@ -93,7 +93,7 @@ setRef(null, value);
 This function processes only `ReactElement`, `string`, and `number` types from `children` using the provided `callback` and returns the result. If `React.Fragment` is included, it processes the children of `React.Fragment` based on the above criteria.
 
 ```typescript
-import transformContent from '@gusok/react-utils/transformContent';
+import transformContent from '@cozka/react-utils/transformContent';
 
 const nodes = transformContent(children, (child) => {
   if (typeof child === 'string' || typeof child === 'number') {
@@ -109,7 +109,7 @@ const nodes = transformContent(children, (child) => {
 This function processes only `ReactElement` types from `children` using the provided `callback` and returns the result. If `React.Fragment` is included, it processes the children of `React.Fragment` based on the above criteria.
 
 ```typescript
-import transformElement from '@gusok/react-utils/transformElement';
+import transformElement from '@cozka/react-utils/transformElement';
 
 const nodes = transformElement(children, (child) => {
   return extendElement(child, { className: 'gsk-el' });
@@ -121,7 +121,7 @@ const nodes = transformElement(children, (child) => {
 This hook returns a ref that can forward its value to multiple refs.
 
 ```tsx
-import useCombineRefs from '@gusok/react-utils/useCombineRefs';
+import useCombineRefs from '@cozka/react-utils/useCombineRefs';
 
 // Pass ref1, ref2, ref3 and obtain a new ref
 const ref = useCombineRefs(ref1, ref2, ref3);

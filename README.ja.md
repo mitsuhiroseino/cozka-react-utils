@@ -1,13 +1,13 @@
-# @gusok/react-utils
+# @cozka/react-utils
 
-`@gusok/react-utils` は、Reactで利用可能なユーティリティを提供するパッケージです。
+`@cozka/react-utils` は、Reactで利用可能なユーティリティを提供するパッケージです。
 
 **[English README is available here](./README.md)**
 
 ## インストール
 
 ```sh
-npm install @gusok/react-utils
+npm install @cozka/react-utils
 ```
 
 ## 使い方
@@ -22,7 +22,7 @@ npm install @gusok/react-utils
 - 上記以外: `props`の値が`undefined`以外のときのみ`element.props`に反映
 
 ```typescript
-import extendElement from '@gusok/react-utils/extendElement';
+import extendElement from '@cozka/react-utils/extendElement';
 
 console.log(element.props);
 // OUTPUT: { className: 'el', style: { backgroundColor: 'black' }, checked: true }
@@ -45,7 +45,7 @@ console.log(extendedElement.props);
 またエレメントに`React.Fragment`が含まれる場合は、`React.Fragment`の子要素を上記の基準で処理します。
 
 ```typescript
-import forEachContent from '@gusok/react-utils/forEachContent';
+import forEachContent from '@cozka/react-utils/forEachContent';
 
 forEachContent(children, (child) => {
   // 型がReactElement,string,numberのchildのみログ出力
@@ -59,7 +59,7 @@ forEachContent(children, (child) => {
 またエレメントに`React.Fragment`が含まれる場合は、`React.Fragment`の子要素を上記の基準で処理します。
 
 ```typescript
-import forEachElement from '@gusok/react-utils/forEachElement';
+import forEachElement from '@cozka/react-utils/forEachElement';
 
 forEachElement(children, (child) => {
   // 型がReactElementのchildのみログ出力
@@ -73,7 +73,7 @@ forEachElement(children, (child) => {
 refが`null`の場合は処理を行いません。
 
 ```typescript
-import setRef from '@gusok/react-utils/setRef';
+import setRef from '@cozka/react-utils/setRef';
 
 // 関数型のrefの場合は引数にvalueを渡して実行される
 setRef((v) => {
@@ -98,7 +98,7 @@ setRef(null, value);
 またエレメントに`React.Fragment`が含まれる場合は、`React.Fragment`の子要素を上記の基準で処理します。
 
 ```typescript
-import transformContent from '@gusok/react-utils/transformContent';
+import transformContent from '@cozka/react-utils/transformContent';
 
 const nodes = transformContent(children, (child) => {
   if (typeof child === 'string' || typeof child === 'number') {
@@ -115,7 +115,7 @@ const nodes = transformContent(children, (child) => {
 またエレメントに`React.Fragment`が含まれる場合は、`React.Fragment`の子要素を上記の基準で処理します。
 
 ```typescript
-import transformElement from '@gusok/react-utils/transformElement';
+import transformElement from '@cozka/react-utils/transformElement';
 
 const nodes = transformElement(children, (child) => {
   return extendElement(child, { className: 'gsk-el' });
@@ -127,7 +127,7 @@ const nodes = transformElement(children, (child) => {
 複数のrefに値を渡すことができるrefを返します。
 
 ```tsx
-import useCombineRefs from '@gusok/react-utils/useCombineRefs';
+import useCombineRefs from '@cozka/react-utils/useCombineRefs';
 
 // ref1, ref2, ref3を渡して新たなrefを取得
 const ref = useCombineRefs(ref1, ref2, ref3);
