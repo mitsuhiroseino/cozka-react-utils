@@ -13,12 +13,11 @@ export default function ensureComponent<P = {}>(
 ): ComponentType<P> {
   if (typeof component === 'string') {
     if (!map.has(component)) {
-      map.set(
-        component,
-        forwardRef((props, ref) => {
-          return createReactElement(component, { ...props, ref });
-        }),
-      );
+      const Comp = forwardRef((props, ref) => {
+        return createReactElement(component, { ...props, ref });
+      });
+      Comp.displayName = component;
+      map.set(component, Comp);
     }
     return map.get(component);
   } else {
