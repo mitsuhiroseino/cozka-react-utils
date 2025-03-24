@@ -34,12 +34,14 @@ const options = [
           types: 'index.d.ts',
           exports: {
             '.': {
-              import: `./index${EXTENTION_ESM}`,
-              require: `./${OUTPUT_CJS_DIR}/index${EXTENTION_CJS}`,
+              import: './index.js',
+              require: `./${OUTPUT_CJS_DIR}/index.cjs`,
+              types: './index.d.js',
             },
             './*': {
-              import: './*.js',
-              require: './cjs/*.cjs',
+              import: './*/index.js',
+              require: `./${OUTPUT_CJS_DIR}/*/index.cjs`,
+              types: './*/index.d.js',
             },
           },
           files: ['**/*'],
