@@ -1,5 +1,5 @@
 import { Ref, useCallback } from 'react';
-import setRef from './setRef';
+import setRef from '../setRef';
 
 /**
  * 複数のrefに纏めて値を渡すことができるrefを取得する

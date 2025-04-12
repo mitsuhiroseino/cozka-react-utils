@@ -7,3 +7,4 @@ export { default as setRef } from './setRef';
 export { default as transformContent } from './transformContent';
 export { default as transformElement } from './transformElement';
 export { default as useCombineRefs } from './useCombineRefs';
+export { default as useIsMounted } from './useIsMounted';

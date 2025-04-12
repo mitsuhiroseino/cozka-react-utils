@@ -1,5 +1,4 @@
-import { Children, ElementType, Key } from 'react';
-import { jsx, jsxs } from 'react/jsx-runtime';
+import { createElement, ElementType, Key } from 'react';
 
 /**
  * jsxまたはjsxsでReactElementのインスタンスを作成する
@@ -13,9 +12,5 @@ export default function createReactElement(
   props: any,
   key?: Key,
 ) {
-  if (Children.count(props.children) > 1) {
-    return jsxs(type, props, key);
-  } else {
-    return jsx(type, props, key);
-  }
+  return createElement(type, props);
 }

@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
-import _isIterable from './_helpers/_isIterable';
-import _traverseElement from './_helpers/_traverseElement';
+import _isIterable from '../_helpers/_isIterable';
+import _traverseElement from '../_helpers/_traverseElement';
 
 /**
  * React.Fragmentを透過し、children内のReactElementを処理する

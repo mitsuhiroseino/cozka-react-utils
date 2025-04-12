@@ -1,5 +1,5 @@
 import { ComponentType, ElementType, forwardRef } from 'react';
-import createReactElement from './createReactElement';
+import createReactElement from '../createReactElement';
 
 const map = new Map<string, ComponentType<any>>();
 

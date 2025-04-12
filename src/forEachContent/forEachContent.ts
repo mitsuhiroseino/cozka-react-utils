@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from 'react';
-import _traverseContent from './_helpers/_traverseContent';
+import _traverseContent from '../_helpers/_traverseContent';
 
 /**
  * React.Fragmentを透過し、children内のReactElement、string、numberを処理する
