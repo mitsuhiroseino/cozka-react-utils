@@ -34,17 +34,17 @@ const options = [
           types: 'index.d.ts',
           exports: {
             '.': {
+              types: './index.d.js',
               import: './index.js',
               require: `./${OUTPUT_CJS_DIR}/index.cjs`,
-              types: './index.d.js',
             },
             './*': {
+              types: ['./*/index.d.js', './*.d.js'],
               import: ['./*/index.js', './*.js'],
               require: [
                 `./${OUTPUT_CJS_DIR}/*/index.cjs`,
                 `./${OUTPUT_CJS_DIR}/*.cjs`,
               ],
-              types: ['./*/index.d.js', './*.d.js'],
             },
           },
           files: ['**/*'],

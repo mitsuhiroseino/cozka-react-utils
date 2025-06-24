@@ -1,5 +1,5 @@
 import { Ref, useCallback } from 'react';
-import setRef from '../setRef';
+import setRef from '../setRefCurrent';
 
 /**
  * 複数のrefに纏めて値を渡すことができるrefを取得する
@@ -8,9 +8,7 @@ import setRef from '../setRef';
  */
 export default function useCombineRefs<T = any>(...refs: Ref<T>[]) {
   const setter = useCallback((value: T) => {
-    for (const ref of refs) {
-      setRef(ref, value);
-    }
+    setRef(value, ...refs);
   }, refs);
   return setter;
 }

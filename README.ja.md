@@ -67,29 +67,26 @@ forEachElement(children, (child) => {
 });
 ```
 
-### setRef
+### setRefCurrent
 
 関数型またはオブジェクト型のrefに値を設定します。
 refが`null`の場合は処理を行いません。
 
 ```typescript
-import setRef from '@cozka/react-utils/setRef';
+import setRefCurrent from '@cozka/react-utils/setRefCurrent';
 
 // 関数型のrefの場合は引数にvalueを渡して実行される
-setRef((v) => {
+setRefCurrent(value, (v) => {
   console.log(v);
-}, value);
+});
 
 // オブジェクトからのrefの場合はcurrentにvalueが設定される
-setRef(
-  {
-    current: null,
-  },
-  value,
-);
+setRefCurrent(value, {
+  current: null,
+});
 
 // nullの場合は処理しない
-setRef(null, value);
+setRefCurrent(value, null);
 ```
 
 ### transformContent

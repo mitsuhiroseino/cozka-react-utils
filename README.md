@@ -64,28 +64,25 @@ forEachElement(children, (child) => {
 });
 ```
 
-### setRef
+### setRefCurrent
 
 This function sets a value to a function or object ref. If the ref is `null`, no action is taken.
 
 ```typescript
-import setRef from '@cozka/react-utils/setRef';
+import setRefCurrent from '@cozka/react-utils/setRefCurrent';
 
 // For function refs, the value is passed as an argument to the function
-setRef((v) => {
+setRefCurrent(value, (v) => {
   console.log(v);
-}, value);
+});
 
 // For object refs, the value is assigned to current
-setRef(
-  {
-    current: null,
-  },
-  value,
-);
+setRefCurrent(value, {
+  current: null,
+});
 
 // No action is taken if the ref is null
-setRef(null, value);
+setRefCurrent(value, null);
 ```
 
 ### transformContent
