@@ -8,10 +8,10 @@ import { MutableRefObject, Ref } from 'react';
 export default function setRefCurrent<T = any>(
   value: T | null,
   ...refs: (Ref<T> | null | undefined)[]
-): void {
+): undefined | void | (() => void) {
   for (const ref of refs) {
     if (typeof ref === 'function') {
-      ref(value);
+      return ref(value);
     } else if (ref) {
       (ref as MutableRefObject<T>).current = value;
     }
