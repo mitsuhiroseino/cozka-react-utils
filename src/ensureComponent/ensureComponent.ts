@@ -1,7 +1,6 @@
-import { ComponentType, ElementType, forwardRef } from 'react';
-import createReactElement from '../createReactElement';
+import { ComponentType, createElement, ElementType, forwardRef } from 'react';
 
-const map = new Map<string, ComponentType<any>>();
+const cache = new Map<string, ComponentType<any>>();
 
 /**
  * 組み込みタグの場合はコンポーネントに変換して返す
@@ -12,14 +11,14 @@ export default function ensureComponent<P = {}>(
   component: ElementType<P>,
 ): ComponentType<P> {
   if (typeof component === 'string') {
-    if (!map.has(component)) {
+    if (!cache.has(component)) {
       const Comp = forwardRef((props, ref) => {
-        return createReactElement(component, { ...props, ref });
+        return createElement(component, { ...props, ref });
       });
       Comp.displayName = component;
-      map.set(component, Comp);
+      cache.set(component, Comp);
     }
-    return map.get(component);
+    return cache.get(component);
   } else {
     return component;
   }
