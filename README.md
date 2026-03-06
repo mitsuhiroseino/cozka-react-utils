@@ -113,15 +113,15 @@ const nodes = transformElement(children, (child) => {
 });
 ```
 
-### useCombineRefs
+### useCombinedRefs
 
 This hook returns a ref that can forward its value to multiple refs.
 
 ```tsx
-import useCombineRefs from '@cozka/react-utils/useCombineRefs';
+import useCombinedRefs from '@cozka/react-utils/useCombinedRefs';
 
 // Pass ref1, ref2, ref3 and obtain a new ref
-const ref = useCombineRefs(ref1, ref2, ref3);
+const ref = useCombinedRefs(ref1, ref2, ref3);
 
 // The ref will forward the SpanHTMLElement to ref1, ref2, ref3
 return <span ref={ref} />;

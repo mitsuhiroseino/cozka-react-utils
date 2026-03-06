@@ -119,15 +119,15 @@ const nodes = transformElement(children, (child) => {
 });
 ```
 
-### useCombineRefs
+### useCombinedRefs
 
 複数のrefに値を渡すことができるrefを返します。
 
 ```tsx
-import useCombineRefs from '@cozka/react-utils/useCombineRefs';
+import useCombinedRefs from '@cozka/react-utils/useCombinedRefs';
 
 // ref1, ref2, ref3を渡して新たなrefを取得
-const ref = useCombineRefs(ref1, ref2, ref3);
+const ref = useCombinedRefs(ref1, ref2, ref3);
 
 // refを通してref1,ref2,ref3にSpanHTMLElementが渡される
 return <span ref={ref} />;

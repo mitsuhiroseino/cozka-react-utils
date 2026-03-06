@@ -1,14 +1,14 @@
 import { Ref, useCallback } from 'react';
-import setRef from '../setRefCurrent';
+import setRefCurrent from '../setRefCurrent';
 
 /**
  * 複数のrefに纏めて値を渡すことができるrefを取得する
  * @param refs
  * @returns
  */
-export default function useCombineRefs<T = any>(...refs: Ref<T>[]) {
+export default function useCombinedRefs<T = any>(...refs: Ref<T>[]) {
   const setter = useCallback((value: T) => {
-    setRef(value, ...refs);
+    setRefCurrent(value, ...refs);
   }, refs);
   return setter;
 }
